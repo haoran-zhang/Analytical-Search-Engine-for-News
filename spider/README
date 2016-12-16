@@ -1,0 +1,5 @@
+spider model usage:
+
+This model only contains seperate scripts. Most of the functions, including crawling information, saving data in mysql and elasticsearch have been merged into auto_updata model. 
+
+The rest value of the model is in fund_stock model. The fund.py script can script basic information of a fund, like what stocks the fund is holding. There is no update function of this script, because not sure how often should this information update. To use the script, just run the fund.py and fund_to_mysql.py.

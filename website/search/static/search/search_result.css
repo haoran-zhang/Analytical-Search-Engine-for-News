@@ -1,0 +1,66 @@
+body{
+background-image:url("images/logo.png");
+background-repeat:no-repeat;
+background-position:0% 1%
+}
+
+
+form{
+position:relative;
+top:1%;
+left:10%;
+right:35%;
+margin:0;
+padding:0;
+}
+
+
+input[type="entity"]
+{
+width:23%;
+height:5%;
+font: 20px 'lucida sans', 'trebuchet MS', 'Tahoma';
+}
+
+input[type="submit"]
+{
+width:7%;
+height:5%;
+background-image:url("images/submit2.png");
+background-size:100%100%;
+}
+
+a[name="type1"]{
+background-image:url("images/arrow1.jpg");
+background-position:100%0%;
+background-size:20px 20px;
+background-repeat:no-repeat;
+}
+
+a[name="type2"]{
+background-image:url("images/arrow2.jpg");
+background-position:100%0%;
+background-size:20px 20px;
+background-repeat:no-repeat;
+}
+
+a[name="type3"]{
+background-image:url("images/arrow3.jpg");
+background-position:100%0%;
+background-size:20px 20px;
+background-repeat:no-repeat;
+}
+
+a[name="type4"]{
+background-image:url("images/arrow4.jpg");
+background-position:100%0%;
+background-size:20px 20px;
+background-repeat:no-repeat;
+}
+
+a[name="type5"]{
+background-image:url("images/arrow5.jpg");
+background-position:100%0%;
+background-size:20px 20px;
+background-repeat:no-repeat;
+}

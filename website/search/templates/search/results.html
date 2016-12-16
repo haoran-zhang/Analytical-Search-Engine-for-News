@@ -1,0 +1,74 @@
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'search/search_result.css' %}" />
+
+{% if q %}
+<title>搜索: {{q}}</title>
+{% endif %}
+<body>
+
+    <!--<h1>{{ Artical_Search }}</h1>-->
+    <!--{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}-->
+
+    <form action="/search/results/" method="POST">
+        {% csrf_token %}
+        {{ form }}
+            <input id="entity" type="entity" name="entity" value="{{ entity }}" >
+            <input type="submit" value=" ">
+
+    </form>
+        <br/>
+        <hr/>
+
+    {% if add %}
+        <br/>
+        <a style="font-size:20px;">{{add}}</a>
+        <br/>
+    {% endif %}
+
+
+    {% for key,value in ans.items %}
+        <br/>
+
+        {% if value.image == "1" %}
+        <a name="type1" href="{{ key }}" style="font-size:20;"  >{{ value.title|upper }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        <span style="font-size:18px;">&nbsp;&nbsp;{{value.senti}}    </span>
+        <span style="font-size:14px;color:gray">&nbsp;&nbsp;{{value.update}}    </span>
+        {% endif %}
+
+        {% if value.image == "2" %}
+        <a name="type2" href="{{ key }}" style="font-size:20;"  >{{ value.title|upper }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        <span style="font-size:18px;">&nbsp;&nbsp;{{value.senti}}    </span>
+        <span style="font-size:14px;color:gray">&nbsp;&nbsp;{{value.update}}    </span>
+        {% endif %}
+
+        {% if value.image == "3" %}
+        <a name="type3" href="{{ key }}" style="font-size:20;"  >{{ value.title|upper }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        <span style="font-size:18px;">&nbsp;&nbsp;{{value.senti}}    </span>
+        <span style="font-size:14px;color:gray">&nbsp;&nbsp;{{value.update}}    </span>
+        {% endif %}
+
+        {% if value.image == "4" %}
+        <a name="type4" href="{{ key }}" style="font-size:20;"  >{{ value.title|upper }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        <span style="font-size:18px;">&nbsp;&nbsp;{{value.senti}}    </span>
+        <span style="font-size:14px;color:gray">&nbsp;&nbsp;{{value.update}}    </span>
+        {% endif %}
+
+        {% if value.image == "5" %}
+        <a name="type5" href="{{ key }}" style="font-size:20;"  >{{ value.title|upper }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        <span style="font-size:18px;">&nbsp;&nbsp;{{value.senti}}    </span>
+        <span style="font-size:14px;color:gray">&nbsp;&nbsp;{{value.update}}    </span>
+        {% endif %}
+
+        <br/>
+        <br/>
+        <span style="color: black;  font-size:13px;font-family: Georgia;">关键字:&nbsp;&nbsp;</span>
+        <span style="color: black;  font-size:14px;font-family: Georgia;">{{value.keyword}}</span>
+        <br/>
+        <br/>
+        <span style="color: gray;  font-size:14px;font-family: Georgia;">来源: {{value.source}}&nbsp;&nbsp; </span>
+        <span style="color: black;  font-size:14px;font-family: Georgia;">{{value.industry}}&nbsp;&nbsp;{{value.fund}} </span>
+        <!--<span style="font-size:16px;font-family: Georgia;">&nbsp;&nbsp;{{value.fund}}    </span>-->
+        <br/>
+        <br/>
+    {% endfor %}
+</body>

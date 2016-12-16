@@ -1,0 +1,27 @@
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'search/search_result.css' %}" />
+
+{% if q %}
+<title>搜索: {{q}}</title>
+{% endif %}
+<body>
+
+    <h1>{{ Artical_Search }}</h1>
+    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+    <form action="/search/results/" method="POST">
+        {% csrf_token %}
+        {{ form }}
+            <input id="entity" type="entity" name="entity" value="{{ entity }}" >
+            <input type="submit" value=" ">
+
+    </form>
+    <br/>
+    <hr/>
+
+    {% for key,value in ans.items %}
+    <p style="font-size:20px;">数据库中没有关于 "{{key}}" 的文章</p>
+     <!--<a href="https://www.baidu.com/s?wd={{ key }}" style="font-size:18;">百度搜索:"{{key}}"</a>-->
+
+     {% endfor %}
+</body>

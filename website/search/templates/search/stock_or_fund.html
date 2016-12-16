@@ -1,0 +1,31 @@
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'search/search_result.css' %}" />
+
+{% if q %}
+<title>搜索: {{q}}</title>
+{% endif %}
+<body>
+
+    <!--<h1>{{ Artical_Search }}</h1>-->
+    <!--{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}-->
+
+    <form action="/search/results/" method="POST">
+        {% csrf_token %}
+        {{ form }}
+            <input id="entity" type="entity" name="entity" value="{{ entity }}" >
+            <input type="submit" value=" ">
+
+    </form>
+        <br/>
+        <hr/>
+        <br/>
+        <a href='/search/results-get/{{add}}-1' style="font-size:20px;">相关股票 {{add}}</a>
+        <br/>
+        <br/>
+        <a href='/search/results-get/{{add}}-2' style="font-size:20px;">相关基金 {{add2}}</a>
+        <br/>
+
+
+
+
+</body>

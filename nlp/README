@@ -1,0 +1,5 @@
+nlp model statement:
+
+This model only contains independent script, and most of the function has been merged in auto_update model. The model is basically no more use.
+
+The interesting thought of translating a word and find what it's sentiment, though not working well, is kept in this model. 

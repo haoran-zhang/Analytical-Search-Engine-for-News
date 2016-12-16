@@ -1,0 +1,15 @@
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'search/index.css' %}" />
+
+<body>
+    <h1>{{ Artical_Search }}</h1>
+    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+    <form action="/search/results/" method="POST">
+        {% csrf_token %}
+        {{ form }}
+            <input id="entity" type="entity" name="entity" value="{{ entity }}" >
+            <input type="submit" value=" ">
+
+    </form>
+</body>
